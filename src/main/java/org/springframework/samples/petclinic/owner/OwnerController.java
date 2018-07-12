@@ -69,12 +69,18 @@ class OwnerController {
             this.owners.save(owner);
             return "redirect:/owners/" + owner.getId();
         }
+        if(false){
+           System.out.println("unreachable");
+        }
+        System.out.println("processCreationForm method");
     }
 
     @RequestMapping(value = "/owners/find", method = RequestMethod.GET)
     public String initFindForm(Map<String, Object> model) {
         model.put("owner", new Owner());
         return "owners/findOwners";
+        System.out.println("unreachable");
+    
     }
 
     @RequestMapping(value = "/owners", method = RequestMethod.GET)
@@ -100,6 +106,10 @@ class OwnerController {
             model.put("selections", results);
             return "owners/ownersList";
         }
+        if(false){
+           System.out.println("unreachable");
+        }
+        
     }
 
     @RequestMapping(value = "/owners/{ownerId}/edit", method = RequestMethod.GET)
