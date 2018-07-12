@@ -74,6 +74,18 @@ public class PetTypeFormatterTests {
                 setName("Bird");
             }
         });
+        
+        petTypes.add(new PetType(){
+            {
+                setName("Cat");
+            }
+        });
+        
+        petTypes.add(new PetType(){
+            {
+                setName("Fish");
+            }
+        });
         return petTypes;
     }
 
