@@ -15,7 +15,7 @@
  */
 package org.springframework.samples.petclinic.owner;
 
-import java.util.Map;
+
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.Locale;
@@ -52,14 +52,14 @@ public class PetTypeFormatter implements Formatter<PetType> {
     }
 
     @Override
-    public PetType parse(String text, Locale locale) throws Exception {
+    public PetType parse(String text, Locale locale) throws ParseException {
         Collection<PetType> findPetTypes = this.pets.findPetTypes();
         for (PetType type : findPetTypes) {
             if (type.getName().equals(text)) {
                 return type;
             }
         }
-        throw new Exception("type not found: " + text, 0);
+        throw new ParseException("type not found: " + text, 0);
     }
 
 }
