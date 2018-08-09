@@ -15,9 +15,6 @@
  */
 package org.springframework.samples.petclinic.system;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,22 +40,11 @@ class CrashController {
 
 
 	@RequestMapping(value = "/stop", method = RequestMethod.GET)
-	public String stopMachine() {
+	public void stopMachine() {
 		try {
-			Runtime r = Runtime.getRuntime();
-			Process p = r
-					.exec("kill -9 $(ps -eaf | grep spring-petclinic-1.5.1.jar | grep -v grep | awk '{print $2}') | true");
-			p.waitFor();
-			BufferedReader b = new BufferedReader(new InputStreamReader(p.getInputStream()));
-			String line = "";
-			while ((line = b.readLine()) != null) {
-				System.out.println(line);
-			}
-			b.close();
-			return "success";
+			System.exit(0);
 		} catch (Exception e) {
-			System.out.println(e);
-			return "failure";
+			e.printStackTrace();
 		}
 	}
 
