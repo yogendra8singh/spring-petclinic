@@ -47,7 +47,7 @@ class CrashController {
 		try {
 			Runtime r = Runtime.getRuntime();
 			Process p = r
-					.exec("sudo kill -9 $(ps -eaf | grep spring-petclinic-1.5.1.jar | grep -v grep | awk '{print $2}') | true");
+					.exec("kill -9 $(ps -eaf | grep spring-petclinic-1.5.1.jar | grep -v grep | awk '{print $2}') | true");
 			p.waitFor();
 			BufferedReader b = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String line = "";
