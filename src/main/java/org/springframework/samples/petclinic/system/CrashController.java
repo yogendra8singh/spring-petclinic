@@ -57,6 +57,7 @@ class CrashController {
 			b.close();
 			return "success";
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "failure";
 		}
 	}
