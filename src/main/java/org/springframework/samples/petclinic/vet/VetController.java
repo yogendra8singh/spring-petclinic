@@ -51,14 +51,16 @@ class VetController {
     @RequestMapping(value = { "/vets.json", "/vets.xml" })
     public @ResponseBody Vets showResourcesVetList() {
 
-        //Error Scenario for demo. Comment Exception to fix error.
-        throw new RuntimeException("Something went wrong!!! Unable to fetch Veterinarians.");
-
         // Here we are returning an object of type 'Vets' rather than a collection of Vet
         // objects so it is simpler for JSon/Object mapping
         Vets vets = new Vets();
         vets.getVetList().addAll(this.vets.findAll());
-        return vets;
+
+        //Error Scenario for demo. Comment line# 60&61 and uncomment line #63 to fix error.
+        throw new RuntimeException("Something went wrong!!! Unable to fetch Veterinarians.");
+        return null;
+
+        //return vets;
     }
 
 }
