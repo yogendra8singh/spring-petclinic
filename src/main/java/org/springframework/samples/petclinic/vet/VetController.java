@@ -53,7 +53,11 @@ class VetController {
 		Vets vets = new Vets();
 		vets.getVetList().addAll(this.vets.findAll());
 		model.put("vets", vets);
-		return "vets/vetList";
+        
+        //Error Scenario for demo. Comment below exception and uncomment return statement.
+		throw new RuntimeException("Something went wrong!!! Unable to fetch Veterinarians.");
+
+		//return "vets/vetList";
 	}
 
 
@@ -67,11 +71,7 @@ class VetController {
 		// objects so it is simpler for JSon/Object mapping
 		Vets vets = new Vets();
 		vets.getVetList().addAll(this.vets.findAll());
-
-		//Error Scenario for demo. Comment below exception and uncomment return statement.
-		throw new RuntimeException("Something went wrong!!! Unable to fetch Veterinarians.");
-
-		//return vets;
+		return vets;
 	}
 
 }
