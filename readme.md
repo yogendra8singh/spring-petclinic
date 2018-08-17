@@ -42,7 +42,7 @@ Note: when m2e is available, there is an m2 icon in Help -> About dialog.
 If m2e is not there, just follow the install process here: http://eclipse.org/m2e/download/
 
 
-### Steps:
+### Steps::
 
 1) In the command line
 ```
