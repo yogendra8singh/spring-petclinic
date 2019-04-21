@@ -55,7 +55,7 @@ class VetController {
 		model.put("vets", vets);
         
         //Error Scenario for demo. Comment below exception and uncomment return statement.
-		throw new RuntimeException("Something went wrong!!! Unable to fetch Veterinarians.");
+		throw new RuntimeException("Something went wrong!!! Unable to fetch Veterinarians....");
 
 		//return "vets/vetList";
 	}
